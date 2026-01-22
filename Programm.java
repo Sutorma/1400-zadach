@@ -904,6 +904,35 @@ public static void tasck_30(String[] args) {
         scanner.close();
     }
 
+    //1.35
+
+    public static void tasck_35(String[] args) {
+        // Создаем объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("--- Вычисление гипотенузы прямоугольного треугольника ---");
+
+        // Запрашиваем длину первого катета (a)
+        System.out.print("Введите длину первого катета (a): ");
+        double leg_a = scanner.nextDouble();
+
+        // Запрашиваем длину второго катета (b)
+        System.out.print("Введите длину второго катета (b): ");
+        double leg_b = scanner.nextDouble();
+
+        // Вычисляем длину гипотенузы по теореме Пифагора: c = sqrt(a² + b²)
+        double hypotenuse_c = Math.sqrt(Math.pow(leg_a, 2) + Math.pow(leg_b, 2));
+
+        // Выводим результат
+        System.out.println("--- Результат вычисления ---");
+        System.out.println("Длина гипотенузы (c) равна: " + hypotenuse_c);
+        
+        // Закрываем Scanner
+        scanner.close();
+    }
+
+    //1.35
+
     
 
 }
