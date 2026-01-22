@@ -1136,6 +1136,169 @@ public static void tasck_36(String[] args) {
         scanner.close();
     }
 
-    
+    //1.41
+ public static void tasck_41(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("--- Вычисление функций a, b, c (Задача 1.41) ---");
+
+        // Запрашиваем значения переменных
+        System.out.print("Введите значение e: ");
+        double e = scanner.nextDouble();
+        System.out.print("Введите значение f: ");
+        double f = scanner.nextDouble();
+        System.out.print("Введите значение g: ");
+        double g = scanner.nextDouble();
+        System.out.print("Введите значение h: ");
+        double h = scanner.nextDouble();
+
+        // --- Проверка условий для избежания ошибок ---
+        if (f == 0) {
+            System.out.println("Ошибка: Знаменатель в функции 'a' и 'c' равен нулю.");
+            scanner.close();
+            return;
+        }
+        if (e * f - 3 == 0) {
+             System.out.println("Ошибка: Знаменатель в функции 'c' равен нулю.");
+             scanner.close();
+             return;
+        }
+        
+        // --- 1. Вычисление функции a ---
+        // a = sqrt(e^(3/f) + g)
+        double term1_a = Math.pow(e, 3.0 / f);
+        double a_result = Math.sqrt(term1_a + g);
+
+        // --- 2. Вычисление функции b ---
+        // b = sin(e) + cos²(h)
+        double term1_b = Math.sin(e);
+        double term2_b = Math.cos(h);
+        // cos²(h) записывается как Math.pow(Math.cos(h), 2)
+        double b_result = term1_b + Math.pow(term2_b, 2);
+
+        // --- 3. Вычисление функции c ---
+        // c = 33g / (ef - 3)
+        double c_result = (33 * g) / (e * f - 3);
+
+        // Выводим результаты
+        System.out.println("--- Результаты вычисления ---");
+        System.out.println("Значение a = " + a_result);
+        System.out.println("Значение b = " + b_result);
+        System.out.println("Значение c = " + c_result);
+        
+        scanner.close();
+    }
+
+    //1.42
+
+    public static void tasck_42(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("--- Вычисление функций a, b, c (Задача 1.42) ---");
+
+        // Запрашиваем значения переменных
+        System.out.print("Введите значение e: ");
+        double e = scanner.nextDouble();
+        System.out.print("Введите значение f: ");
+        double f = scanner.nextDouble();
+        System.out.print("Введите значение g: ");
+        double g = scanner.nextDouble();
+        System.out.print("Введите значение h: ");
+        double h = scanner.nextDouble();
+
+        // --- Проверка условий для избежания ошибок ---
+        // Для функции c: подкоренное выражение не может быть отрицательным
+        if (Math.pow(g - h, 2) - 3 * Math.sin(e) < 0) {
+             System.out.println("Ошибка: Выражение под корнем функции 'c' отрицательно при данных значениях.");
+             scanner.close();
+             return;
+        }
+
+        // --- 1. Вычисление функции a ---
+        // a = (e + f/2) / 3
+        double a_result = (e + f / 2.0) / 3.0;
+
+        // --- 2. Вычисление функции b ---
+        // b = |h² - g|
+        double b_result = Math.abs(Math.pow(h, 2) - g);
+
+        // --- 3. Вычисление функции c ---
+        // c = sqrt((g - h)² - 3sin(e))
+        double c_result = Math.sqrt(Math.pow(g - h, 2) - 3 * Math.sin(e));
+
+        // Выводим результаты
+        System.out.println("--- Результаты вычисления ---");
+        System.out.println("Значение a = " + a_result);
+        System.out.println("Значение b = " + b_result);
+        System.out.println("Значение c = " + c_result);
+        
+        scanner.close();
+    }
+
+    //1.43
+
+     public static void tasck_43(String[] args) {
+        // Создаем объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("--- Вычисление среднего арифметического и геометрического модулей ---");
+
+        // Запрашиваем два числа
+        System.out.print("Введите первое число (a): ");
+        double a = scanner.nextDouble();
+        System.out.print("Введите второе число (b): ");
+        double b = scanner.nextDouble();
+
+        // --- Этап 1: Вычисление модулей чисел ---
+        double abs_a = Math.abs(a);
+        double abs_b = Math.abs(b);
+
+        // --- Этап 2: Вычисление среднего арифметического модулей ---
+        double arithmeticMean = (abs_a + abs_b) / 2.0;
+
+        // --- Этап 3: Вычисление среднего геометрического модулей ---
+        // Так как мы берем модули, произведение abs_a * abs_b всегда неотрицательно.
+        double geometricMean = Math.sqrt(abs_a * abs_b);
+
+        // Выводим результаты
+        System.out.println("--- Результаты вычисления ---");
+        System.out.println("Среднее арифметическое модулей: " + arithmeticMean);
+        System.out.println("Среднее геометрическое модулей: " + geometricMean);
+        
+        // Закрываем Scanner
+        scanner.close();
+    }
+
+     //1.44
+
+     public static void tasck_44(String[] args) {
+        // Создаем объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("--- Вычисление периметра и диагонали прямоугольника ---");
+
+        // Запрашиваем длину первой стороны (a)
+        System.out.print("Введите длину первой стороны (a): ");
+        double side_a = scanner.nextDouble();
+
+        // Запрашиваем длину второй стороны (b)
+        System.out.print("Введите длину второй стороны (b): ");
+        double side_b = scanner.nextDouble();
+
+        // --- Этап 1: Вычисление периметра (P) ---
+        // P = 2 * (a + b)
+        double perimeter = 2 * (side_a + side_b);
+
+        // --- Этап 2: Вычисление длины диагонали (d) по теореме Пифагора ---
+        // d = sqrt(a² + b²)
+        double diagonal = Math.sqrt(Math.pow(side_a, 2) + Math.pow(side_b, 2));
+
+        // Выводим результаты
+        System.out.println("--- Результаты вычисления ---");
+        System.out.println("Периметр прямоугольника (P) равен: " + perimeter);
+        System.out.println("Длина диагонали (d) равна: " + diagonal);
+        
+        // Закрываем Scanner
+        scanner.close();
+    }
+
 
 }
