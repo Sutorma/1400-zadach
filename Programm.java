@@ -279,5 +279,104 @@ public class Programm {
     }
 
     
+//1.15
+public static void tasck_18(String[] args) {
+        // --- Инициализация переменных ---
+        // Используем double для точных вычислений с плавающей точкой
+        double a = 5.0;
+        double b = 3.0;
+        double c = 2.0;
+        double d = 1.0;
+        double x = 4.0;
+        double x1 = 1.0;
+        double x2 = 2.0;
+        double x3 = 3.0;
+        double v0 = 10.0;
+        double t = 2.0;
+        double m = 1.0;
+        double g = 9.81; // Ускорение свободного падения
+        double h = 5.0;
+        double R = 100.0;
+        double R1 = 50.0;
+        double R2 = 50.0;
+        double T = 300.0; // Пример значения для температуры в последнем выражении
+
+        System.out.println("--- Результаты вычислений выражений ---");
+
+        // а) √x² + x²
+        double result_a = Math.sqrt(Math.pow(x, 2) + Math.pow(x, 2));
+        System.out.println("а) " + result_a);
+
+        // б) x1x2 + x1x3 + x2x3
+        double result_b = x1 * x2 + x1 * x3 + x2 * x3;
+        System.out.println("б) " + result_b);
+
+        // в) v0*t + at² / 2
+        double result_v = v0 * t + (a * Math.pow(t, 2) / 2.0);
+        System.out.println("в) " + result_v);
+
+        // г) mv² / 2 + mgh
+        double result_g = (m * Math.pow(v0, 2) / 2.0) + m * g * h;
+        System.out.println("г) " + result_g);
+
+        // д) 1/R1 + 1/R2
+        double result_d = (1.0 / R1) + (1.0 / R2);
+        System.out.println("д) " + result_d);
+
+        // е) mg cos α (используем a как альфа)
+        double result_e = m * g * Math.cos(a);
+        System.out.println("е) " + result_e);
+
+        // ж) 2πR
+        double result_zh = 2 * Math.PI * R;
+        System.out.println("ж) " + result_zh);
+
+        // з) b² - 4ac
+        double result_z = Math.pow(b, 2) - 4 * a * c;
+        System.out.println("з) " + result_z);
+
+        // и) γ m1 m2 / r² (используем a, b, R для примера)
+        double result_i = g * a * b / Math.pow(R, 2);
+        System.out.println("и) " + result_i);
+
+        // к) I²R (используем a как I)
+        double result_k = Math.pow(a, 2) * R;
+        System.out.println("к) " + result_k);
+
+        // л) absin c (используем a, b, c)
+        double result_l = a * b * Math.sin(c);
+        System.out.println("л) " + result_l);
+
+        // м) √a² + b² - 2abcosc
+        double result_m = Math.sqrt(Math.pow(a, 2) + Math.pow(b, 2) - 2 * a * b * Math.cos(c));
+        System.out.println("м) " + result_m);
+
+        // н) (ad + bc) / ad
+        double result_n = (a * d + b * c) / (a * d);
+        System.out.println("н) " + result_n);
+
+        // о) √1 - sin²x
+        double result_o = Math.sqrt(1 - Math.pow(Math.sin(x), 2));
+        System.out.println("о) " + result_o);
+
+        // п) 1 / √ax² + bx + c
+        double result_p = 1.0 / Math.sqrt(a * Math.pow(x, 2) + b * x + c);
+        System.out.println("п) " + result_p);
+
+        // р) (√x+1 + √x-1) / 2√x
+        double result_r = (Math.sqrt(x + 1) + Math.sqrt(x - 1)) / (2 * Math.sqrt(x));
+        System.out.println("р) " + result_r);
+
+        // с) |x| + |x+1|
+        double result_s = Math.abs(x) + Math.abs(x + 1);
+        System.out.println("с) " + result_s);
+
+        // т) |1 - |x||
+        double result_t = Math.abs(1 - Math.abs(x));
+        System.out.println("т) " + result_t);
+    }
+
+
+
 
 }
