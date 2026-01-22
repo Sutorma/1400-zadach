@@ -22,7 +22,7 @@ public class Programm {
         task1_11();
         task1_12();
         task1_13();
-        task1_14();
+
     }
 
     // Задача 1.1: Вывести число e с точностью до сотых
@@ -133,18 +133,151 @@ public class Programm {
         System.out.println("2 кг");
         System.out.println("13 17");
     }
-    
-    // Задача 1.14: Вывести переменные x, y в формате 'x = ...'
-    public static void task1_14() {
-        System.out.println("\n--- Задача 1.14 (Требуется ввод 2-х чисел) ---");
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Введите x: ");
-        int x = sc.nextInt();
-        System.out.print("Введите y: ");
-        int y = sc.nextInt();
-        System.out.println("x = " + x);
-        System.out.println("y = " + y);
-        // Закрываем Scanner только в конце последней задачи, чтобы избежать ошибок
-        sc.close();
+
+
+//1.13
+    public static void tasck_16(String[] args) {
+        // --- Инициализация переменных для всех выражений ---
+        // Для а), б), в), г), д), е), ж), з)
+        double a = 10.0;
+        double b = 5.0;
+        double c = 2.0;
+        double x = 3.0; // Для а)
+        
+        // Для к)
+        double m = 2.0;
+        double n = 3.0;
+
+        System.out.println("--- Результаты вычислений ---");
+
+        // а) (-1.0 / x^2)
+        double result_a = (-1.0 / Math.pow(x, 2));
+        System.out.println("а) " + result_a);
+
+        // б) (a / (b * c))
+        double result_b = (a / (b * c));
+        System.out.println("б) " + result_b);
+
+        // в) ((a / b) * c)
+        double result_v = ((a / b) * c);
+        System.out.println("в) " + result_v);
+
+        // г) ((a + b) / 2.0)
+        double result_g = ((a + b) / 2.0);
+        System.out.println("г) " + result_g);
+
+        // д) (5.45 * ((a + 2 * b) / (2 - a)))
+        double result_d = (5.45 * ((a + 2 * b) / (2 - a)));
+        System.out.println("д) " + result_d);
+
+        // е) ((-b + sqrt(b^2 - 4ac)) / (2 * a))
+        double result_e = ((-b + Math.sqrt(Math.pow(b, 2) - 4 * a * c)) / (2 * a));
+        System.out.println("е) " + result_e);
+
+        // ж) ((-b + (1.0 / a)) / (2.0 / c))
+        double result_zh = ((-b + (1.0 / a)) / (2.0 / c));
+        System.out.println("ж) " + result_zh);
+
+        // з) (1.0 / (1 + ((a + b) / 2.0)))
+        double result_z = (1.0 / (1 + ((a + b) / 2.0)));
+        System.out.println("з) " + result_z);
+
+        // и) Сложная дробь
+        double result_i = (1.0 / (1 + (1.0 / (2 + (1.0 / (2 + (3.0 / 5.0)))))));
+        System.out.println("и) " + result_i);
+
+        // к) 2^(m^n)
+        double result_k = Math.pow(2, Math.pow(m, n));
+        System.out.println("к) " + result_k);
     }
+
+
+
+//1.14
+ public static void tasck_17(String[] args) {
+        double a = 10.0;
+        double b = 5.0;
+        double c = 2.0;
+        double R = 1.0;
+        double x = 1.5; // Значение для тригонометрических функций
+
+        System.out.println();
+
+        // а) a / b / c; -> (a / b) / c
+        double result_a = (a / b) / c;
+        System.out.println("а) " + result_a);
+
+        // б) a · b / c; -> (a * b) / c
+        double result_b = (a * b) / c;
+        System.out.println("б) " + result_b);
+
+        // в) a / b · c; -> (a / b) * c
+        double result_v = (a / b) * c;
+        System.out.println("в) " + result_v);
+
+        // г) a + b / c; -> a + (b / c)
+        // Примечание: порядок операций в Java сам выполнит деление первым, но скобки для наглядности
+        double result_g = a + (b / c);
+        System.out.println("г) " + result_g);
+        
+        // д) a + b / c; (Аналогично г)
+        double result_d = a + (b / c);
+        System.out.println("д) " + result_d);
+
+        // е) a + b / b + c; -> a + (b / b) + c
+        double result_e = a + (b / b) + c;
+        System.out.println("е) " + result_e);
+
+        // ж) a + b / b + c; (Аналогично е)
+        double result_zh = a + (b / b) + c;
+        System.out.println("ж) " + result_zh);
+
+        // з) a / sin b; -> a / Math.sin(b)
+        // Аргументы тригонометрических функций в Java должны быть в радианах
+        double result_z = a / Math.sin(b);
+        System.out.println("з) " + result_z);
+
+        // и) 1 / 2 - a - b - sin x; -> 1.0 / 2 - a - b - Math.sin(x)
+        double result_i = 1.0 / 2 - a - b - Math.sin(x);
+        System.out.println("и) " + result_i);
+
+        // к) 2 · b · c · cos a / 2 / b + c; -> (2 * b * c * Math.cos(a / 2.0)) / b + c
+        double result_k = (2 * b * c * Math.cos(a / 2.0)) / b + c;
+        System.out.println("к) " + result_k);
+
+        // л) 4 · R · sin a / 2 · sin b / 2 · sin c / 2; -> 4 * R * Math.sin(a / 2.0) * Math.sin(b / 2.0) * Math.sin(c / 2.0)
+        double result_l = 4 * R * Math.sin(a / 2.0) * Math.sin(b / 2.0) * Math.sin(c / 2.0);
+        System.out.println("л) " + result_l);
+
+        // м) a · x + b / c · x + d; -> a * x + (b / (c * x)) + d (если d объявить)
+        // Предполагаем, что d - это переменная, объявим её
+        double d = 3.0;
+        double result_m = a * x + (b / (c * x)) + d;
+        System.out.println("м) " + result_m);
+
+        // н) 2 · sin a + b / 2 · cos a - b / 2; -> 2 * Math.sin((a + b) / 2.0) * Math.cos((a - b) / 2.0)
+        double result_n = 2 * Math.sin((a + b) / 2.0) * Math.cos((a - b) / 2.0);
+        System.out.println("н) " + result_n);
+
+        // о) abs 2 - sin 3 - abs x / 2; -> Math.abs(2 - Math.sin(3 - Math.abs(x / 2.0))) (Интерпретация выражения из учебника)
+        double result_o = Math.abs(2 - Math.sin(3 - Math.abs(x / 2.0)));
+        System.out.println("о) " + result_o);
+
+        
+        // Вывод результатов
+        System.out.println("Результат 1 (дробь): " + result_a);
+        System.out.println("Результат 2 (корень): " + result_b);
+        System.out.println("Результат 3 (модуль/синус): " + result_v);
+        System.out.println("Результат 4 (экспонента): " + result_g);
+        System.out.println("Результат 2 (корень): " + result_d);
+        System.out.println("Результат 3 (модуль/синус): " + result_e);
+        System.out.println("Результат 4 (экспонента): " + result_zh);
+         System.out.println("Результат 1 (дробь): " + result_g);
+        System.out.println("Результат 2 (корень): " + result_z);
+        System.out.println("Результат 3 (модуль/синус): " + result_i);
+        System.out.println("Результат 4 (экспонента): " + result_k);
+    }
+
+    
+
 }
