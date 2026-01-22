@@ -999,5 +999,143 @@ public static void tasck_36(String[] args) {
     }
 
     
+    //1.38
+
+    public static void tasck_38(String[] args) {
+        // Создаем объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("--- Вычисление периметра равнобедренной трапеции ---");
+
+        // Запрашиваем длины оснований и высоту
+        System.out.print("Введите длину первого основания (b1): ");
+        double base1 = scanner.nextDouble();
+
+        System.out.print("Введите длину второго основания (b2): ");
+        double base2 = scanner.nextDouble();
+        
+        System.out.print("Введите высоту трапеции (h): ");
+        double height = scanner.nextDouble();
+
+        // --- Этап 1: Вычисление горизонтального смещения (dx) ---
+        // dx = |b1 - b2| / 2
+        double dx = Math.abs(base1 - base2) / 2.0;
+
+        // --- Этап 2: Вычисление длины боковой стороны (c) по теореме Пифагора ---
+        // c = sqrt(dx² + h²)
+        double sideLength_c = Math.sqrt(Math.pow(dx, 2) + Math.pow(height, 2));
+
+        // --- Этап 3: Вычисление периметра (P) ---
+        // P = b1 + b2 + 2*c (так как трапеция равнобедренная)
+        double perimeter = base1 + base2 + 2 * sideLength_c;
+
+        // Выводим результаты
+        System.out.println("--- Результат вычисления ---");
+        System.out.println("Длина боковой стороны (c) равна: " + sideLength_c);
+        System.out.println("Периметр трапеции (P) равен: " + perimeter);
+        
+        // Закрываем Scanner
+        scanner.close();
+    }
+
+    
+    //1.39
+
+    public static void tasck_39(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("--- Вычисление функций Z и Q (Задача 1.39) ---");
+
+        // Запрашиваем значения x и y
+        System.out.print("Введите значение x: ");
+        double x = scanner.nextDouble();
+        System.out.print("Введите значение y: ");
+        double y = scanner.nextDouble();
+
+        // Проверяем условия для знаменателей первой функции, чтобы избежать деления на ноль или корень из отрицательного числа
+        if (x == 0 || (Math.pow(x, 2) + 10) < 0) {
+             System.out.println("Ошибка: Знаменатели функции Z равны нулю или подкоренное выражение отрицательно при данных x.");
+             scanner.close();
+             return;
+        }
+
+        // --- 1. Вычисление функции Z ---
+        // Z = (x + (2 + y) / x²) / (y + 1 / sqrt(x² + 10))
+
+        double z_numerator_inner = (2 + y) / Math.pow(x, 2);
+        double z_numerator = x + z_numerator_inner;
+        
+        double z_denominator_inner = 1 / Math.sqrt(Math.pow(x, 2) + 10);
+        double z_denominator = y + z_denominator_inner;
+
+        double z_result = z_numerator / z_denominator;
+
+        // --- 2. Вычисление функции Q ---
+        // Q = 2.8 * sin(x) + |y|
+        double q_result = 2.8 * Math.sin(x) + Math.abs(y);
+
+        // Выводим результаты
+        System.out.println("--- Результаты вычисления ---");
+        System.out.println("Значение Z = " + z_result);
+        System.out.println("Значение Q = " + q_result);
+        
+        scanner.close();
+    }
+
+    
+    //1.40
+
+    public static void tasck_40(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("--- Вычисление функций X и Y (Задача 1.40) ---");
+
+        // Запрашиваемя значения a и b
+        System.out.print("Введите значение a: ");
+        double a = scanner.nextDouble();
+        System.out.print("Введите значение b: ");
+        double b = scanner.nextDouble();
+
+        // Проверяем условия для знаменателей, чтобы избежать деления на ноль или корень из отрицательного числа
+        if (b < 0) {
+             System.out.println("Ошибка: Значение 'b' должно быть неотрицательным для функции X (корень из b).");
+             scanner.close();
+             return;
+        }
+        if (b + (a + b) / 2.0 == 0) {
+             System.out.println("Ошибка: Знаменатель функции X равен нулю.");
+             scanner.close();
+             return;
+        }
+        if (5.5 * a == 0) {
+             System.out.println("Ошибка: Знаменатель функции Y равен нулю.");
+             scanner.close();
+             return;
+        }
+
+        // --- 1. Вычисление функции X ---
+        // x = (2 / (a² + 25) + b) / sqrt(b + (a + b) / 2)
+
+        double x_numerator_inner_fraction = 2.0 / (Math.pow(a, 2) + 25);
+        double x_numerator = x_numerator_inner_fraction + b;
+        
+        double x_denominator_inner = b + (a + b) / 2.0;
+        double x_denominator = Math.sqrt(x_denominator_inner);
+
+        double x_result = x_numerator / x_denominator;
+
+        // --- 2. Вычисление функции Y ---
+        // y = (|a| + 2sin(b)) / 5.5a
+        double y_numerator = Math.abs(a) + 2 * Math.sin(b);
+        double y_denominator = 5.5 * a;
+        double y_result = y_numerator / y_denominator;
+
+        // Выводим результаты
+        System.out.println("--- Результаты вычисления ---");
+        System.out.println("Значение X = " + x_result);
+        System.out.println("Значение Y = " + y_result);
+        
+        scanner.close();
+    }
+
+    
 
 }
