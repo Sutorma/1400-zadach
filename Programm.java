@@ -741,6 +741,62 @@ public static void tasck_24(String[] args) {
         scanner.close();
     }
 
+  //1.29
+
+  public static void tasck_299(String[] args) {
+        // Создаем объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        // Запрашиваем длину ребра куба
+        System.out.print("Введите длину ребра куба (например, 5.0): ");
+
+        // Считываем введенное значение (используем double для дробных чисел)
+        double edgeLength = scanner.nextDouble();
+
+        // Вычисляем объем куба: V = a³
+        double volume = Math.pow(edgeLength, 3);
+
+        // Вычисляем площадь боковой поверхности: S = 4 * a²
+        double lateralSurfaceArea = 4 * Math.pow(edgeLength, 2);
+
+        // Выводим результаты
+        System.out.println("Объем куба (V) равен: " + volume);
+        System.out.println("Площадь боковой поверхности (S) равна: " + lateralSurfaceArea);
+        
+        // Закрываем Scanner
+        scanner.close();
+    }
+
+      //1.30
+
+public static void tasck_30(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("--- Вычисление функций (Задача 1.30) ---");
+
+        // --- Пункт а) Вычисление функции z = x³ - 2.5xy + 1.78x² - 2.5y + 1 ---
+        System.out.print("Введите значение x для функции а): ");
+        double x = scanner.nextDouble();
+        System.out.print("Введите значение y для функции а): ");
+        double y = scanner.nextDouble();
+
+        double z_result = Math.pow(x, 3) - 2.5 * x * y + 1.78 * Math.pow(x, 2) - 2.5 * y + 1;
+        System.out.println("а) Значение функции z: " + z_result);
+
+        System.out.println("-------------------------------------------------");
+
+        // --- Пункт б) Вычисление функции x = 3.56a + b³ - 5.8b² + 3.8 - 1.5 ---
+        // Примечание: в выражении из учебника используется 'x' слева от знака равенства,
+        // но, чтобы не перезаписывать переменную x из пункта а), используем новую переменную result_b.
+        System.out.print("Введите значение a для функции б): ");
+        double a = scanner.nextDouble();
+        System.out.print("Введите значение b для функции б): ");
+        double x1 = scanner.nextDouble();
+
+        double result_x1 = 3.56 * a + Math.pow(x1, 3) - 5.8 * Math.pow(x1, 2) + 3.8 * a - 1.5;
+        System.out.println("б) Значение функции x: " + result_x1);
+        
+        scanner.close();
+    }
 
 
 }
