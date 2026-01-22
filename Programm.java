@@ -796,5 +796,114 @@ public static void tasck_30(String[] args) {
         scanner.close();
     }
 
+//1.31
+    public static void tasck_31(String[] args) {
+        // Создаем объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        // Запрашиваем два целых числа
+        System.out.print("Введите первое целое число (a): ");
+        int a = scanner.nextInt();
+        System.out.print("Введите второе целое число (b): ");
+        int b = scanner.nextInt();
+
+        // --- а) Вычисление среднего арифметического ---
+        // Используем тип double для результата деления, чтобы получить точный ответ
+        double arithmeticMean = (double) (a + b) / 2;
+
+        // --- б) Вычисление среднего геометрического ---
+        // Используем Math.sqrt для корня и double для точности результата
+        double geometricMean = Math.sqrt((double) a * b);
+
+        // Выводим результаты
+        System.out.println("--- Результаты вычислений ---");
+        System.out.println("а) Среднее арифметическое: " + arithmeticMean);
+        System.out.println("б) Среднее геометрическое: " + geometricMean);
+        
+        // Закрываем Scanner
+        scanner.close();
+    }
+
+    //1.32
+     public static void tasck_32(String[] args) {
+        // Создаем объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        // Запрашиваем массу тела
+        System.out.print("Введите массу тела в кг (например, 10.5): ");
+        double mass_kg = scanner.nextDouble();
+
+        // Запрашивае объем тела
+        System.out.print("Введите объем тела в м³ (например, 2.0): ");
+        double volume_m3 = scanner.nextDouble();
+
+        // Вычисляем плотность по формуле ρ = m / V
+        double density = mass_kg / volume_m3;
+
+        // Выводим результат
+        System.out.println("--- Результат вычисления ---");
+        System.out.println("Плотность материала равна: " + density + " кг/м³");
+        
+        // Закрываем Scanner
+        scanner.close();
+    }
+
+      //1.33
+
+      public static void tasck_33(String[] args) {
+        // Создаем объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        // Запрашиваем количество жителей
+        System.out.print("Введите количество жителей (например, 1000000): ");
+        // Используем long, так как количество жителей может быть большим целым числом
+        long residents = scanner.nextLong();
+
+        // Запрашиваем территории
+        System.out.print("Введите площадь территории в км² (например, 5000.0): ");
+        // Используем double для площади, так как она может быть дробной
+        double area_sq_km = scanner.nextDouble();
+
+        // Вычисляем плотность населения по формуле ρ = жители / площадь
+        // Результат будет double, так как площадь double
+        double density = (double) residents / area_sq_km;
+
+        // Выводим результат
+        System.out.println("--- Результат вычисления ---");
+        System.out.println("Плотность населения: " + density + " чел./км²");
+        
+        // Закрываем Scanner
+        scanner.close();
+    }
+
+    //1.34
+
+     public static void tasck_34(String[] args) {
+        // Создаем объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("--- Решение линейного уравнения ax + b = 0 ---");
+
+        // Запрашиваем коэффициент 'a'
+        System.out.print("Введите коэффициент a (a ≠ 0): ");
+        double a = scanner.nextDouble();
+
+        // Запрашиваем коэффициент 'b'
+        System.out.print("Введите коэффициент b: ");
+        double b = scanner.nextDouble();
+
+        // Вычисляем x по формуле x = -b / a
+        double x = -b / a;
+
+        // Выводим результат
+        System.out.println("--- Результат вычисления ---");
+        System.out.println("Для уравнения " + a + "x + " + b + " = 0");
+        System.out.println("Корень уравнения x = " + x);
+        
+        // Закрываем Scanner
+        scanner.close();
+    }
+
+    
 
 }
