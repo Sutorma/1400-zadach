@@ -470,5 +470,92 @@ public static void tasck_17(String[] args) {
         System.out.println("г) Конечное значение s: " + s_g);
     }
 
+      //1.19
+ public static void tasck_19(String[] args) {
+        // --- а) ---
+        // Начальное значение x = 10
+        double x_a = 10;
+        // Переприсваиваем x значение -10
+        x_a = -10;
+        System.out.println("а) Итоговое значение x: " + x_a); // Ответ: -10.0
+
+        // --- б) ---
+        // Начальное значение x = 17.5
+        double x_b = 17.5;
+        // x = -2 * x (-2 * 17.5 = -35.0)
+        x_b = -2 * x_b;
+        System.out.println("б) Итоговое значение x: " + x_b); // Ответ: -35.0
+
+        // --- в) ---
+        // Начальное значение x = 60
+        double x_v = 60;
+        // x = x - 1 (60 - 1 = 59)
+        x_v = x_v - 1;
+        // Переприсваиваем x значение 0
+        x_v = 0;
+        System.out.println("в) Итоговое значение x: " + x_v); // Ответ: 0.0
+
+        // --- г) ---
+        // Начальное значение x = -50
+        double x_g = -50;
+        // Объявляем и инициализируем переменную k (в условии не указано, какое у нее значение)
+        double k = 5; 
+        // Переприсваиваем x значение -25
+        x_g = -25;
+        // x = x + k (-25 + k)
+        x_g = x_g + k;
+        System.out.println("г) Итоговое значение x: " + x_g); // Ответ: -20.0 (при k=5)
+    }
+
+      //1.20
+ public static void tasck_20(String[] args) {
+        // --- Задание а) ---
+        System.out.println("--- Задание а) ---");
+        // s := 14
+        double s_a = 14;
+        System.out.println("s = " + s_a);
+        // k := -3
+        double k_a = -3;
+        System.out.println("k = " + k_a);
+        // d := s + 1
+        double d_a = s_a + 1;
+        System.out.println("d = " + d_a);
+        // s := d
+        s_a = d_a;
+        System.out.println("s (обновлено) = " + s_a);
+        // k := 2 · s
+        k_a = 2 * s_a;
+        System.out.println("k (обновлено) = " + k_a);
+        
+        System.out.println("Итоговое значение s: " + s_a); // Итоговый s = 15.0 
+        System.out.println("Итоговое значение k: " + k_a); // Итоговый k = 30.0
+
+        System.out.println(); // Пустая строка для разделения
+
+        // --- Задание б) ---
+        System.out.println("--- Задание б) ---");
+        // s := 0
+        double s_b = 0;
+        System.out.println("s = " + s_b);
+        // k := 30
+        double k_b = 30;
+        System.out.println("k = " + k_b);
+        // d := k - 5
+        double d_b = k_b - 5;
+        System.out.println("d = " + d_b);
+        // k := 2 · d
+        k_b = 2 * d_b;
+        System.out.println("k (обновлено) = " + k_b);
+        // s := k - 100
+        s_b = k_b - 100;
+        System.out.println("s (обновлено) = " + s_b);
+        
+        System.out.println("Итоговое значение s: " + s_b); // Итоговый s = -50.0
+        System.out.println("Итоговое значение k: " + k_b); // Итоговый k = 50.0
+    }
+
+
+
+    
 
 }
