@@ -134,9 +134,69 @@ public class Programm {
         System.out.println("13 17");
     }
 
+ public static void tasck_14(String[] args) {
+        // --- Инициализация переменных с примерами значений (тип double) ---
+        double x = 4.0;
+        double a = 2.0;
+        double R = 3.0; // Для выражения д)
+        double y = 1.0;
+        double alpha = Math.PI / 4; // 45 градусов в радианах
+        double beta = Math.PI / 6;  // 30 градусов в радианах
+        double b = 8.0;
 
-//1.13
-    public static void tasck_16(String[] args) {
+        System.out.println("--- Результаты вычислений выражений ---");
+
+        // а) 2x
+        double result_a = 2 * x;
+        System.out.println("а) " + result_a);
+
+        // б) sin x
+        double result_b = Math.sin(x);
+        System.out.println("б) " + result_b);
+
+        // в) a²
+        double result_v = Math.pow(a, 2);
+        System.out.println("в) " + result_v);
+
+        // г) √x
+        double result_g = Math.sqrt(x);
+        System.out.println("г) " + result_g);
+
+        // д) |R|
+        double result_d = Math.abs(R);
+        System.out.println("д) " + result_d);
+
+        // е) 5 cos y
+        double result_e = 5 * Math.cos(y);
+        System.out.println("е) " + result_e);
+
+        // ж) -7,5a²
+        double result_zh = -7.5 * Math.pow(a, 2);
+        System.out.println("ж) " + result_zh);
+
+        // з) 3√x
+        double result_z = 3 * Math.sqrt(x);
+        System.out.println("з) " + result_z);
+
+        // и) sinα cosβ + cosα sinβ
+        double result_i = Math.sin(alpha) * Math.cos(beta) + Math.cos(alpha) * Math.sin(beta);
+        System.out.println("и) " + result_i);
+
+        // к) a√2b
+        double result_k = a * Math.sqrt(2 * b);
+        System.out.println("к) " + result_k);
+
+        // л) 3 sin 2α cos 3β
+        double result_l = 3 * Math.sin(2 * alpha) * Math.cos(3 * beta);
+        System.out.println("л) " + result_l);
+
+        // м) -5√x + √y
+        double result_m = -5 * Math.sqrt(x) + Math.sqrt(y);
+        System.out.println("м) " + result_m);
+    }
+
+//1.15
+    public static void tasck_15(String[] args) {
         // --- Инициализация переменных для всех выражений ---
         // Для а), б), в), г), д), е), ж), з)
         double a = 10.0;
@@ -193,8 +253,10 @@ public class Programm {
 
 
 
-//1.14
- public static void tasck_17(String[] args) {
+    
+
+//1.16
+ public static void tasck_16(String[] args) {
         double a = 10.0;
         double b = 5.0;
         double c = 2.0;
@@ -279,8 +341,8 @@ public class Programm {
     }
 
     
-//1.15
-public static void tasck_18(String[] args) {
+//1.17
+public static void tasck_17(String[] args) {
         // --- Инициализация переменных ---
         // Используем double для точных вычислений с плавающей точкой
         double a = 5.0;
@@ -376,7 +438,37 @@ public static void tasck_18(String[] args) {
         System.out.println("т) " + result_t);
     }
 
+    //1.18
+ public static void tasck_18(String[] args) {
+        // Объявление и инициализация переменной k,
+        // значение которой не было указано в условии.
+        // Принимаем k = 0, как обсуждалось ранее.
+        double k = 0.0;
 
+        System.out.println("--- Результаты выполнения операторов присваивания ---");
+
+        // --- Пункт а) ---
+        double s_a = 5;
+        s_a = 57;
+        System.out.println("а) Конечное значение s: " + s_a);
+
+        // --- Пункт б) ---
+        double s_b = 6;
+        s_b = -5.2 * s_b;
+        s_b = 0;
+        System.out.println("б) Конечное значение s: " + s_b);
+
+        // --- Пункт в) ---
+        double s_v = -7.5;
+        s_v = 2 * s_v;
+        System.out.println("в) Конечное значение s: " + s_v);
+
+        // --- Пункт г) ---
+        double s_g = 45;
+        s_g = -25;
+        s_g = s_g + k;
+        System.out.println("г) Конечное значение s: " + s_g);
+    }
 
 
 }
