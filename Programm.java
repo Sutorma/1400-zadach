@@ -554,8 +554,193 @@ public static void tasck_17(String[] args) {
         System.out.println("Итоговое значение k: " + k_b); // Итоговый k = 50.0
     }
 
+    //1.21
+public static void tasck_21(String[] args) {
+        System.out.println("--- Результаты выполнения операторов присваивания (Задача 1.21) ---");
 
+        // --- Пункт а) ---
+        // Исходные операторы:
+        // a := 5.8
+        // b := -7.9
+        // b := a
+        // a := b
+        double a_a = 5.8;
+        double b_a = -7.9;
+        b_a = a_a; // Теперь b_a равно 5.8
+        a_a = b_a; // Теперь a_a равно 5.8
+        System.out.println("а) Конечное значение a: " + a_a + ", b: " + b_a);
 
+        // --- Пункт б) ---
+        // Исходные операторы:
+        // a := 0
+        // b := -9.99
+        // b := a
+        // a := b
+        double a_b = 0;
+        double b_b = -9.99;
+        b_b = a_b; // Теперь b_b равно 0
+        a_b = b_b; // Теперь a_b равно 0
+        System.out.println("б) Конечное значение a: " + a_b + ", b: " + b_b);
+    }
+ 
+    //Вычисления по известным формулам
     
+    
+    //1.22
+    public static void tasck_22(String[] args) {
+        // --- Инициализация переменных ---
+    
+        double x_value = 5.0;
+        double a_value = 3.0;
+
+        System.out.println("--- Вычисление функций для x = " + x_value + " и a = " + a_value + " ---");
+
+        // --- Пункт а) Вычисление функции y = 7x² - 3x + 6 ---
+        double y_result = 7 * Math.pow(x_value, 2) - 3 * x_value + 6;
+        System.out.println("а) Значение y: " + y_result);
+
+        // --- Пункт б) Вычисление функции x = 12a² + 7a - 16 ---
+        double x_result = 12 * Math.pow(a_value, 2) + 7 * a_value - 16;
+        System.out.println("б) Значение x: " + x_result);
+    }
+
+   //1.23
+     public static void tasck_23(String[] args) {
+        // --- Инициализация переменной ---
+        double a = 5.0;
+
+        System.out.println("--- Вычисление функции y для a = " + a + " ---");
+
+        // --- Вычисление числителя ---
+        double numerator = Math.pow(a, 2) + 10;
+        
+        // --- Вычисление знаменателя ---
+        double denominator = Math.sqrt(Math.pow(a, 2) + 1);
+        
+        // --- Вычисление конечного значения y ---
+        double y = numerator / denominator;
+
+        System.out.println("Значение y: " + y);
+    }
+
+   //1.24
+public static void tasck_24(String[] args) {
+        // --- Инициализация переменных ---
+        double a = 2.0;
+        double x = 4.0;
+
+        System.out.println("--- Вычисление функций для a = " + a + " и x = " + x + " ---");
+
+        // --- а) Вычисление значения функции x = sqrt(abs(2a + sin(3a)) / 3.56) ---
+        double x_numerator = Math.abs(2 * a + Math.sin(3 * a));
+        double x_denominator = 3.56;
+        double x_result = Math.sqrt(x_numerator / x_denominator);
+        System.out.println("а) Значение первой функции (x): " + x_result);
+
+        // --- б) Вычисление значения функции y = sin((3.2 + sqrt(1 + x)) / abs(5x)) ---
+        double y_numerator = 3.2 + Math.sqrt(1 + x);
+        double y_denominator = Math.abs(5 * x);
+        double y_argument = y_numerator / y_denominator;
+        double y_result = Math.sin(y_argument);
+        System.out.println("б) Значение второй функции (y): " + y_result);
+    }
+
+   //1.25
+
+   public static void tasck_25(String[] args) {
+        // Создаем объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        // Запрашиваем длину стороны квадрата
+        System.out.print("Введите длину стороны квадрата (например, 10.5): ");
+
+        // Считываем введенное значение (используем double для дробных чисел)
+        double sideLength = scanner.nextDouble();
+
+        // Вычисляем периметр по формуле P = 4 * a
+        double perimeter = 4 * sideLength;
+
+        // Выводим результат
+        System.out.println("Периметр квадрата равен: " + perimeter);
+        
+        // Закрываем Scanner
+        scanner.close();
+    }
+
+
+    //1.26
+
+    public static void tasck_26(String[] args) {
+        // Создаем объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        // Запрашиваем длину радиуса окружности
+        System.out.print("Введите длину радиуса окружности (например, 5.0): ");
+
+        // Считываем введенное значение (используем double для дробных чисел)
+        double radius = scanner.nextDouble();
+
+        // Вычисляем диаметр по формуле D = 2 * R
+        double diameter = 2 * radius;
+
+        // Выводим результат
+        System.out.println("Диаметр окружности равен: " + diameter);
+        
+        // Закрываем Scanner
+        scanner.close();
+    }
+
+     //1.27
+    public static void tasck_27(String[] args) {
+        // Заданный радиус Земли в километрах
+        final double EARTH_RADIUS_KM = 6350.0;
+        
+        // Создаем объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        // Запрашиваем у пользователя высоту над Землей
+        System.out.print("Введите высоту над Землей в км (например, 0.1 для 100 м): ");
+
+        // Считываем введенное значение высоты (используем double)
+        double height_h = scanner.nextDouble();
+
+        // Вычисляем расстояние до горизонта по формуле Пифагора: d = sqrt(h^2 + 2*R*h)
+        // Используем Math.sqrt и Math.pow
+        double distance_d = Math.sqrt(Math.pow(height_h, 2) + 2 * EARTH_RADIUS_KM * height_h);
+
+        // Выводим результат, округленный для удобства восприятия
+        System.out.println("Расстояние до линии горизонта: " + distance_d + " км");
+        
+        // Закрываем Scanner
+        scanner.close();
+    }
+
+     //1.28
+
+     public static void tasck_28(String[] args) {
+        // Создаем объект Scanner для чтения ввода с консоли
+        Scanner scanner = new Scanner(System.in);
+
+        // Запрашиваем длину ребра куба
+        System.out.print("Введите длину ребра куба (например, 5.0): ");
+
+        // Считываем введенное значение (используем double для дробных чисел)
+        double edgeLength = scanner.nextDouble();
+
+        // Вычисляем объем куба: V = a³
+        double volume = Math.pow(edgeLength, 3);
+
+        // Вычисляем площадь боковой поверхности: S = 4 * a²
+        double lateralSurfaceArea = 4 * Math.pow(edgeLength, 2);
+
+        // Выводим результаты
+        System.out.println("Объем куба (V) равен: " + volume);
+        System.out.println("Площадь боковой поверхности (S) равна: " + lateralSurfaceArea);
+        
+        // Закрываем Scanner
+        scanner.close();
+    }
+
+
 
 }
